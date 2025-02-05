@@ -1,5 +1,6 @@
 package org.example
 
 fun main() {
-    println("Hello World!")
+    val id: Int = 100
+    var name: String = "Takehata"
 }

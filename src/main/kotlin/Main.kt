@@ -1,7 +1,7 @@
 package org.example
 
 fun main() {
-    val id: Int = 100
+    val id: Int = 101
     var name: String = "Takehata"
 
     whenExample(id)
@@ -16,15 +16,15 @@ fun displayMessage(message: String): Unit {
 }
 
 fun whenExample(num: Int) {
-    when (num) {
-        100 -> {
+    when {
+        num < 100 -> {
+            println("Less than 100")
+        }
+        num == 100 -> {
             println("Equal to 100")
         }
-        200 -> {
-            println("Equal to 200")
-        }
         else -> {
-            println("Undefined value")
+            println("Greater than 100")
         }
     }
 }

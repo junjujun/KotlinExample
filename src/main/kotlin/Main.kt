@@ -1,30 +1,17 @@
 package org.example
 
 fun main() {
-    val id: Int = 101
-    var name: String = "Takehata"
+    for (i in 1..10) {
+        println("i is $i")
+    }
 
-    whenExample(id)
-}
+    for (i in 1 until 10 step 2) {
+        println("i is $i")
+    }
 
-fun countLength(str: String): Int {
-    return str.length
-}
-
-fun displayMessage(message: String): Unit {
-    println(message)
-}
-
-fun whenExample(num: Int) {
-    when {
-        num < 100 -> {
-            println("Less than 100")
-        }
-        num == 100 -> {
-            println("Equal to 100")
-        }
-        else -> {
-            println("Greater than 100")
-        }
+    val list = listOf(1, 2, 5, 6, 10)
+    for (i in list) {
+        println("i is $i")
     }
 }
+

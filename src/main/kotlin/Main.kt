@@ -1,12 +1,17 @@
 package org.example
 
 fun main() {
-    val human = Human("Takehata")
-    human.showName()
+    val dog = Dog("Pochi")
+    dog.cries()
 }
 
-class Human(val name: String) {
-    fun showName() {
-        println(name)
+open class Animal(val name: String) {
+    fun showName() = println("name is $name")
+    open fun cries() = println("")
+}
+
+class Dog(name: String) : Animal(name) {
+    override fun cries() {
+        println("bowwow")
     }
 }

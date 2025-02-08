@@ -6,16 +6,22 @@ open class Animal(val name: String) {
     }
 }
 
-class Dog(name: String, age: Int) : Animal(name) {
-    val dogAge = age * 7 // プロパティの初期化
-    init {
-        println("Dog init: $name is $age years old.")
+class Dog(name: String) : Animal(name) {
+    var dogAge: Int
+
+    // セカンダリコンストラクタ
+    constructor(name: String, age: Int) : this(name) {
+        this.dogAge = age * 7
+        println("$name is $age years old. (Human age: $dogAge)")
     }
+
     init {
-        println("Another init block: Dog age in human years is $dogAge.")
+        dogAge = 0 // プライマリコンストラクタ用のデフォルト値
+        println("Dog init block")
     }
 }
 
 fun main() {
-    val dog = Dog("Buddy", 3)
+    val dog1 = Dog("Buddy")            // プライマリコンストラクタ使用
+    val dog2 = Dog("Charlie", 3)       // セカンダリコンストラクタ使用
 }

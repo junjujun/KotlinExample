@@ -1,20 +1,21 @@
 package org.example
 
-fun main() {
-    val dog = Dog("Pochi", 1)
-    dog.cries()
-}
-
 open class Animal(val name: String) {
-    fun showName() = println("name is $name")
-    open fun cries() = println("")
+    init {
+        println("Animal init: $name")
+    }
 }
 
 class Dog(name: String, age: Int) : Animal(name) {
+    val dogAge = age * 7 // プロパティの初期化
     init {
-        println(age)
+        println("Dog init: $name is $age years old.")
     }
-    override fun cries() {
-        println("bowwow")
+    init {
+        println("Another init block: Dog age in human years is $dogAge.")
     }
+}
+
+fun main() {
+    val dog = Dog("Buddy", 3)
 }

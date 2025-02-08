@@ -1,12 +1,12 @@
 package org.example
 
 fun main() {
-    val human = Human()
-    human.showName("Takehata")
+    val human = Human("Takehata")
+    human.showName()
 }
 
-class Human {
-    fun showName(name: String) {
+class Human(val name: String) {
+    fun showName() {
         println(name)
     }
 }
